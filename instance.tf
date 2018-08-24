@@ -1,7 +1,7 @@
 
 ### BASTION ###
 resource "aws_instance" "public" {
-  ami           = "ami-04681a1dbd79675a5"
+  ami           = "ami-0bdb1d6c15a40392c"
   instance_type = "t2.micro"
 
   vpc_security_group_ids = ["${aws_security_group.bastion_connexion.id}"]
@@ -10,7 +10,7 @@ resource "aws_instance" "public" {
 
   associate_public_ip_address = "true"
 
-  key_name = "MyGuruKP"
+  key_name = "myTerraKP"
 
   user_data = "${data.template_file.userdata1.rendered}"
 
@@ -21,7 +21,7 @@ resource "aws_instance" "public" {
 
 ### PRIVATE INSTANCE ###
 resource "aws_instance" "private" {
-  ami           = "ami-04681a1dbd79675a5"
+  ami           = "ami-0bdb1d6c15a40392c"
   instance_type = "t2.micro"
 
   vpc_security_group_ids = ["${aws_security_group.private_connexion.id}"]
@@ -30,7 +30,7 @@ resource "aws_instance" "private" {
 
   associate_public_ip_address = "false"
 
-  key_name = "MyGuruKP"
+  key_name = "myTerraKP"
 
 
   tags {
