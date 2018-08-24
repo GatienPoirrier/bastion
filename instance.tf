@@ -10,7 +10,7 @@ resource "aws_instance" "public" {
 
   associate_public_ip_address = "true"
 
-  key_name = "myTerraKP"
+  key_name = "${var.KP}"
 
   user_data = "${data.template_file.userdata1.rendered}"
 
@@ -30,8 +30,7 @@ resource "aws_instance" "private" {
 
   associate_public_ip_address = "false"
 
-  key_name = "myTerraKP"
-
+  key_name = "${var.KP}"
 
   tags {
     Name = "Private Instance"
