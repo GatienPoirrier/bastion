@@ -8,5 +8,5 @@ provider "aws" {
 
 
 variable "private_key" {
-  default = "MyGuruKP"
+  default = "myTerraKP"
 }
